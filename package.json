@@ -1,0 +1,17 @@
+{
+  "name": "express-common-session",
+  "version": "0.1.0",
+  "description": "A wrapped function of session config function to let servers under the same root domain to operate the same session stored in redis",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "schema",
+    "sub domain",
+    "redis",
+    "session"
+  ],
+  "author": "Bam King",
+  "license": "ISC"
+}
