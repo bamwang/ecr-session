@@ -1,6 +1,6 @@
 {
   "name": "ecr-session",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A Redis backed Express-session wrapper for sharing the session store under the same root domain between different servers",
   "main": "index.js",
   "keywords": [
