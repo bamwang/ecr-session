@@ -7,8 +7,8 @@ const app = express();
 app.use(commonSession({
     secret: 'secret_to_sign_session_id',
     saveUninitialized: true,
-    ttl: '60', // second
-    url: 'redis//redis_url:6379/0',
+    ttl: '3600', // second
+    url: 'redis://redis_url:6379/0',
     prefix: 'session_store_prefix',
     domain: 'root-domain.io',
 }));

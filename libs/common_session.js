@@ -8,7 +8,7 @@ module.exports = function commonSession(options) {
   const secret = options.secret || '';
   const saveUninitialized = options.saveUninitialized || true;
   const ttl = options.ttl || 3600;
-  const url = options.redisURL || 'redis://localhost/0';
+  const url = options.url || 'redis://localhost/0';
   const prefix = options.prefix || 'session';
   if (!options.domain) {
     console.warn(`empty domain will not form a common session`);

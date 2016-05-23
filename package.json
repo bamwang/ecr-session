@@ -9,8 +9,29 @@
     "redis",
     "session"
   ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "author": "Bam Wang",
   "license": "ISC",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/bamwang/ecr-session"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "eslint": "^2.1.0",
+    "eslint-config-xo-space": "^0.10.0",
+    "mocha": "^2.4.5"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true,
+      "es6": true
+    }
+  },
   "dependencies": {
     "connect-redis": "^3.0.2",
     "express-session": "^1.13.0"
