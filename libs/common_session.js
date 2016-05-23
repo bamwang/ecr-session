@@ -1,17 +1,31 @@
+'use strict';
+
 const session = require('express-session');
 const ConnectRedis = require('connect-redis')(session);
 
-module.exports = function commonSession(redisURL, redisPrefix, secret, domain) {
+module.exports = function commonSession(options) {
+  options = options || {};
+  const secret = options.secret || '';
+  const saveUninitialized = options.saveUninitialized || true;
+  const ttl = options.ttl || 3600;
+  const url = options.redisURL || 'redis://localhost/0';
+  const prefix = options.prefix || 'session';
+  if (!options.domain) {
+    console.warn(`empty domain will not form a common session`);
+  }
+  const domain = `.${options.domain}`;
+
   return session({
-    secret: secret,
     resave: true,
-    saveUninitialized: true,
+    secret,
+    saveUninitialized,
     store: new ConnectRedis({
-      url: redisURL,
-      prefix: redisPrefix
+      ttl,
+      url,
+      prefix
     }),
     cookie: {
-      domain: domain,
+      domain,
       path: '/'
     }
   });

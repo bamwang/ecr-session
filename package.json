@@ -1,17 +1,14 @@
 {
-  "name": "express-common-session",
+  "name": "ecr-session",
   "version": "0.1.0",
-  "description": "A wrapped function of session config function to let servers under the same root domain to operate the same session stored in redis",
+  "description": "A Redis backed Express-session wrapper for sharing the session store under the same root domain between different servers",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "keywords": [
     "schema",
     "sub domain",
     "redis",
     "session"
   ],
-  "author": "Bam King",
+  "author": "Bam Wang",
   "license": "ISC"
 }
