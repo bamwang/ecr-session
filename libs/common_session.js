@@ -10,6 +10,7 @@ module.exports = function commonSession(options) {
   const ttl = options.ttl || 3600;
   const url = options.url || 'redis://localhost/0';
   const prefix = options.prefix || 'session';
+  const secure = options.secure || false;
   if (!options.domain) {
     console.warn(`empty domain will not form a common session`);
   }
@@ -26,6 +27,7 @@ module.exports = function commonSession(options) {
     }),
     cookie: {
       domain,
+      secure,
       path: '/'
     }
   });
